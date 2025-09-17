@@ -28,8 +28,8 @@ The Lifecycle Atlas transforms hours of manual campaign analysis into minutes of
 
 ```
 ├── README.md                           # This file
-├── HANDOVER_DOCUMENTATION.md          # Complete handover guide
-├── n8n Lifecycle Atlas.json           # Main n8n workflow
+├── Handover Documentation.md          # Complete handover guide
+├── N8N Lifecycle Atlas.json           # Main n8n workflow
 ├── .env                               # Environment variables
 ├── Process Raw Data.js                # Data normalization logic
 ├── Comprehensive Program Analysis.js  # AI response processing
@@ -67,7 +67,7 @@ The Lifecycle Atlas transforms hours of manual campaign analysis into minutes of
 
 ## 📖 Documentation
 
-For complete setup instructions, troubleshooting, and technical details, see [HANDOVER_DOCUMENTATION.md](HANDOVER_DOCUMENTATION.md).
+For complete setup instructions, troubleshooting, and technical details, see [Handover Documentation.md](Handover%20Documentation.md).
 
 ## 👥 Support
 
