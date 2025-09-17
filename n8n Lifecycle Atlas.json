@@ -1,0 +1,1543 @@
+{
+  "name": "Lifecycle Atlas",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "LifeCycle Atlas",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name",
+              "placeholder": "Your full name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": " Email",
+              "fieldType": "email",
+              "placeholder": "Your customer.io email address",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company Name",
+              "placeholder": "The name of your customer",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Environment ID",
+              "fieldType": "number",
+              "placeholder": "The env ID of your customer's workspace.",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Data Center",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "eu"
+                  },
+                  {
+                    "option": "us"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Next",
+          "customCss": ":root {\n\t/* Typography (CIO: Saans → Instrument Sans → Helvetica fallback) */\n\t--font-family: 'Saans', 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n\t--font-weight-normal: 400;\n\t--font-weight-bold: 600;\n\n\t/* Type scale (kept close to your original; tweak as needed) */\n\t--font-size-body: 13px;\n\t--font-size-label: 14px;\n\t--font-size-test-notice: 12px;\n\t--font-size-input: 14px;\n\t--font-size-header: 22px;\n\t--font-size-paragraph: 14px;\n\t--font-size-link: 13px;\n\t--font-size-error: 12px;\n\t--font-size-html-h1: 32px;\n\t--font-size-html-h2: 24px;\n\t--font-size-html-h3: 18px;\n\t--font-size-html-h4: 16px;\n\t--font-size-html-h5: 14px;\n\t--font-size-html-h6: 12px;\n\t--font-size-subheader: 15px;\n\n\t/* Colors — Customer.io palette */\n\t/* Base / surfaces */\n\t--color-background: #FBF9F8;   /* Warm Gray */\n\t--color-card-bg: #FFFFFF;\n\t--color-card-border: #CFCFCE;  /* Gray 200 */\n\t--color-card-shadow: rgba(11, 53, 59, 0.06); /* Evergreen @ 6% */\n\n\t/* Text */\n\t--color-header: #151515;       /* Charcoal */\n\t--color-label: #4B4949;        /* Gray 700 */\n\t--color-input-text: #4B4949;   /* Gray 700 */\n\t--color-header-subtext: #5F5F5E; /* Gray 600 */\n\t--color-html-text: #151515;    /* Charcoal */\n\n\t/* Links */\n\t--color-link: #2C155D;         /* Indigo */\n\t--color-html-link: #2C155D;    /* Indigo */\n\n\t/* Inputs / states */\n\t--color-input-border: #BBBAB9; /* Gray 300 */\n\t--color-focus-border: #0B353B; /* Evergreen */\n\n\t/* Buttons */\n\t--color-submit-btn-bg: #0B353B;   /* Evergreen (primary) */\n\t--color-submit-btn-text: #FFFFFF;\n\t--color-clear-button-bg: #737272; /* Gray 500 */\n\n\t/* Notices & feedback */\n\t--color-test-notice-text: #151515; /* Charcoal on light notice */\n\t--color-test-notice-bg: #FFF5C1;   /* Cosmic */\n\t--color-test-notice-border: #E6DA97; /* darker Cosmic for border */\n\t--color-error: #950E5F;            /* Plum (brand error accent) */\n\t--color-required: #950E5F;         /* Plum */\n\n\t/* Optional accent swatches from CIO highlights (use in components if needed) */\n\t/* --accent-verdant: #E4FFCE;\n\t   --accent-evergreen: #0B353B;\n\t   --accent-indigo: #2C155D;\n\t   --accent-sangria: #3B0B22;\n\t   --accent-teal: #44D4DE;\n\t   --accent-blue: #0075FF;\n\t   --accent-purple: #533FCD;\n\t   --accent-yellow: #F7B83F;\n\t   --accent-orange: #FD7742; */\n\n\t/* Radii */\n\t--border-radius-card: 10px;     /* slightly softer corners, aligns with CIO UI */\n\t--border-radius-input: 8px;\n\t--border-radius-clear-btn: 50%;\n\t--card-border-radius: 10px;\n\n\t/* Spacing (unchanged; works well in n8n) */\n\t--padding-container-top: 24px;\n\t--padding-card: 24px;\n\t--padding-test-notice-vertical: 12px;\n\t--padding-test-notice-horizontal: 24px;\n\t--margin-bottom-card: 16px;\n\t--padding-form-input: 12px;\n\t--card-padding: 24px;\n\t--card-margin-bottom: 16px;\n\n\t/* Dimensions */\n\t--container-width: 448px;\n\t--submit-btn-height: 48px;\n\t--checkbox-size: 18px;\n\n\t/* Effects */\n\t--box-shadow-card: 0 4px 16px 0 var(--color-card-shadow);\n\t--opacity-placeholder: 0.6; /* a touch stronger for readability */\n}\n"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        -704
+      ],
+      "id": "59923af7-e377-43c8-a57c-a89510e97dac",
+      "name": "On form submission",
+      "webhookId": "4dcd8805-5e3d-484b-9739-0abc6e41d590"
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Upload File",
+              "fieldType": "file",
+              "multipleFiles": false,
+              "acceptFileTypes": ".json",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "formDescription": "=Please download the JSON file from the following URL and upload it below.\n\n\n<a href=\"https://{{ $json['Data Center'] }}.fly.customer.io/v1/environments/{{ $json['Environment ID'] }}/deliveries/filters\" target=\"_blank\">Click to Download {{ $json['Company Name'] }}'s Data</a>",
+          "customCss": ":root {\n\t/* Typography (CIO: Saans → Instrument Sans → Helvetica fallback) */\n\t--font-family: 'Saans', 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n\t--font-weight-normal: 400;\n\t--font-weight-bold: 600;\n\n\t/* Type scale (kept close to your original; tweak as needed) */\n\t--font-size-body: 13px;\n\t--font-size-label: 14px;\n\t--font-size-test-notice: 12px;\n\t--font-size-input: 14px;\n\t--font-size-header: 22px;\n\t--font-size-paragraph: 14px;\n\t--font-size-link: 13px;\n\t--font-size-error: 12px;\n\t--font-size-html-h1: 32px;\n\t--font-size-html-h2: 24px;\n\t--font-size-html-h3: 18px;\n\t--font-size-html-h4: 16px;\n\t--font-size-html-h5: 14px;\n\t--font-size-html-h6: 12px;\n\t--font-size-subheader: 15px;\n\n\t/* Colors — Customer.io palette */\n\t/* Base / surfaces */\n\t--color-background: #FBF9F8;   /* Warm Gray */\n\t--color-card-bg: #FFFFFF;\n\t--color-card-border: #CFCFCE;  /* Gray 200 */\n\t--color-card-shadow: rgba(11, 53, 59, 0.06); /* Evergreen @ 6% */\n\n\t/* Text */\n\t--color-header: #151515;       /* Charcoal */\n\t--color-label: #4B4949;        /* Gray 700 */\n\t--color-input-text: #4B4949;   /* Gray 700 */\n\t--color-header-subtext: #5F5F5E; /* Gray 600 */\n\t--color-html-text: #151515;    /* Charcoal */\n\n\t/* Links */\n\t--color-link: #2C155D;         /* Indigo */\n\t--color-html-link: #2C155D;    /* Indigo */\n\n\t/* Inputs / states */\n\t--color-input-border: #BBBAB9; /* Gray 300 */\n\t--color-focus-border: #0B353B; /* Evergreen */\n\n\t/* Buttons */\n\t--color-submit-btn-bg: #0B353B;   /* Evergreen (primary) */\n\t--color-submit-btn-text: #FFFFFF;\n\t--color-clear-button-bg: #737272; /* Gray 500 */\n\n\t/* Notices & feedback */\n\t--color-test-notice-text: #151515; /* Charcoal on light notice */\n\t--color-test-notice-bg: #FFF5C1;   /* Cosmic */\n\t--color-test-notice-border: #E6DA97; /* darker Cosmic for border */\n\t--color-error: #950E5F;            /* Plum (brand error accent) */\n\t--color-required: #950E5F;         /* Plum */\n\n\t/* Optional accent swatches from CIO highlights (use in components if needed) */\n\t/* --accent-verdant: #E4FFCE;\n\t   --accent-evergreen: #0B353B;\n\t   --accent-indigo: #2C155D;\n\t   --accent-sangria: #3B0B22;\n\t   --accent-teal: #44D4DE;\n\t   --accent-blue: #0075FF;\n\t   --accent-purple: #533FCD;\n\t   --accent-yellow: #F7B83F;\n\t   --accent-orange: #FD7742; */\n\n\t/* Radii */\n\t--border-radius-card: 10px;     /* slightly softer corners, aligns with CIO UI */\n\t--border-radius-input: 8px;\n\t--border-radius-clear-btn: 50%;\n\t--card-border-radius: 10px;\n\n\t/* Spacing (unchanged; works well in n8n) */\n\t--padding-container-top: 24px;\n\t--padding-card: 24px;\n\t--padding-test-notice-vertical: 12px;\n\t--padding-test-notice-horizontal: 24px;\n\t--margin-bottom-card: 16px;\n\t--padding-form-input: 12px;\n\t--card-padding: 24px;\n\t--card-margin-bottom: 16px;\n\n\t/* Dimensions */\n\t--container-width: 448px;\n\t--submit-btn-height: 48px;\n\t--checkbox-size: 18px;\n\n\t/* Effects */\n\t--box-shadow-card: 0 4px 16px 0 var(--color-card-shadow);\n\t--opacity-placeholder: 0.6; /* a touch stronger for readability */\n}\n"
+        }
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        224,
+        -704
+      ],
+      "id": "6741275e-3ded-4415-8f3f-11b646bfeea6",
+      "name": "Form",
+      "webhookId": "459721a8-4dc0-47d4-ac88-5190c69178ae"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "={{ $('On form submission').item.json['Company Name'] }}'s Env Data Recieved",
+        "completionMessage": "<p>The analysis is currently in progress. \n<br>\nYou will receive an email with the results as soon as they are ready.</p>\n\n<br><br>\n\n<h3>Important Compliance Directive</h3>\n<p><strong>Please delete the file you previously downloaded to your workstation.</strong><br>This step is mandatory to ensure data protection and maintain regulatory compliance.</p>\n<br>\n<p><em>If you have any questions, please drop a message in the Slack Channel: #csm-ai-champions</em></p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        448,
+        -704
+      ],
+      "id": "b2ace060-8bc3-4c72-a2b5-b46e1d91e57e",
+      "name": "Final",
+      "webhookId": "d4cceb44-da9d-4de7-9c70-0b0eb9b67313"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.0-flash-lite",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.0-flash-lite"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=<job>\n  <role>\n    You are a senior lifecycle marketing strategist specializing in categorizing individual marketing programs into lifecycle stages and clusters.\n  </role>\n\n  <task>\n    Analyze a single program (campaign, newsletter, or transactional) and categorize it into the appropriate lifecycle stage and cluster based on its purpose, content, and target audience.\n  </task>\n\n  <data_fields>\n    program_name - The name of the campaign, newsletter, or transactional program\n    program_type - The type of program: \"Campaign\", \"Newsletter\", or \"Transactional\"\n    program_id - The unique identifier for the program\n    program_state - The current state of the program (running, draft, etc.)\n    messages - Array of individual messages within the program\n    subject - The subject line or title of individual messages\n    action_id - The unique identifier for the message action\n    template_id - The unique identifier for the message template\n    campaign_id - The unique identifier for the campaign\n    type - The type of message (webhook, email, push, etc.)\n  </data_fields>\n\n  <output_format>\n    Output ONLY the categorization in this exact JSON format. Do not include any markdown formatting, code blocks, or additional text - just the raw JSON:\n    \n    {\n      \"program_name\": \"[Program Name]\",\n      \"program_type\": \"[Program Type]\",\n      \"program_id\": \"[Program ID]\",\n      \"lifecycle_stage\": \"[Stage Name]\",\n      \"cluster\": \"[Cluster Name]\",\n      \"reasoning\": \"[One line explanation of why this program fits in this stage and cluster]\"\n    }\n  </output_format>\n  <lifecycle_stages_and_clusters>\n{{ $json.candidates[0].content.parts[0].text }}\n  </lifecycle_stages_and_clusters>\n\n  <guidelines>\n    - Use the program information to choose from the provided lifecycle stages and clusters\n    - Do not create any new stages or clusters beyond what's provided in the <lifecycle_stages_and_clusters>.\n    - Select the most appropriate stage and cluster based on the program's purpose and content\n    - If you cannot confidently categorise the program, use \"Other\" for stage/cluster and suggest a new category\n    - Provide clear reasoning for your categorisation\n    - Use exact names, IDs, and values as provided in the input data - do not modify, shorten, or change any names or identifiers\n  </guidelines>\n\n  <input>\n    [SINGLE PROGRAM JSON HERE]\n    {{ JSON.stringify($json.programs, null, 2) }}\n  </input>\n</job>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        -704
+      ],
+      "id": "5ae9831a-84bf-45ea-ac3f-0ac8efc31c8d",
+      "name": "Message a model",
+      "retryOnFail": true,
+      "executeOnce": false,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "HwawrX3DcgbLgRzz",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "programs",
+        "include": "selectedOtherFields",
+        "fieldsToInclude": "candidates",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1472,
+        -704
+      ],
+      "id": "cb1f07d6-cb11-4452-a8ca-e1f117688ef8",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-pro",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-pro"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=<job>\n  <role>\n    You are a senior lifecycle marketing strategist analyzing messaging data to identify lifecycle stages and campaign clusters.\n  </role>\n\n  <task>\n    Analyse the provided JSON export of {{ $('On form submission').item.json['Company Name'] }}'s campaign/newsletter/message metadata and create a structured list of lifecycle stages with clusters. For each cluster, provide a description of why it was generated and include representative examples.\n  </task>\n\n  <data_fields>\n    program_name - The name of the campaign, newsletter, or transactional program\n    program_type - The type of program: \"Campaign\", \"Newsletter\", or \"Transactional\"\n    program_id - The unique identifier for the program\n    program_state - The current state of the program (running, draft, etc.)\n    messages - Array of individual messages within the program\n    subject - The subject line or title of individual messages\n    action_id - The unique identifier for the message action\n    template_id - The unique identifier for the message template\n    campaign_id - The unique identifier for the campaign\n    type - The type of message (webhook, email, push, etc.)\n  </data_fields>\n\n  <output_format>\n    Output ONLY a clean tree structure in this exact format:\n    \n    Stage: [Stage Name]\n    [Short summary of this stage based on the data]:\n    \n    Clusters:\n    [Cluster Name]: \n    [Cluster Description based on the data] \n    [Cluster Name]: \n    [Cluster Description based on the data] \n    \n    Stage: [Stage Name]\n    [Short summary of this stage based on the data]:\n   \n    Clusters:\n    [Cluster Name]: \n    [Cluster Description based on the data] \n    [Cluster Name]: \n    [Cluster Description based on the data]\n    \n    Continue for all stages.\n  </output_format>\n\n  <lifecycle_stages>\n    Awareness - Grabbing attention and making first impressions with compelling content\n    Engagement - Building relationships and deeper connections with the audience\n    Consideration - Helping prospects evaluate options and understand value\n    Activation and Conversion - Moving prospects toward commitment and purchase\n    Onboarding - Ensuring smooth first experiences and building confidence\n    Retention - Keeping existing customers engaged and satisfied\n    Loyalty and Advocacy - Rewarding and empowering best customers\n    Reactivation and Win-back - Re-engaging customers who have drifted away\n  </lifecycle_stages>\n\n  <guidelines>\n    - Use ALL programs to map to appropriate lifecycle stages\n    - Create clusters based on common themes, purposes, or target audiences. Create as many clusters as make sense based on data — no fixed limit.\n    - Group programs that serve similar purposes or target similar customer segments\n    - For each cluster, provide a brief description of what it contains\n    - If a stage has no relevant programs, use \"No programs mapped to this stage\" as the cluster description\n    - Awareness stage typically happens outside Customer.io - only include if programs clearly belong here and nowhere else.\n    - Output ONLY the tree structure - no introductions, or conclusions\n  </guidelines>\n\n  <input>\n  {{ JSON.stringify($('Process Raw Data').item.json.programs, null, 2) }}\n  </input>\n</job>\n"
+            }
+          ]
+        },
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        896,
+        -784
+      ],
+      "id": "3c9f1b2f-036f-4d46-ab09-88d7929a7719",
+      "name": "Generate Stages and Clusters",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "HwawrX3DcgbLgRzz",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1248,
+        -704
+      ],
+      "id": "191d3396-8b65-4451-a30a-df46b2effc61",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "content"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2048,
+        -704
+      ],
+      "id": "1cd11665-9413-4d8e-86e2-ff9d1eb67bf1",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Function node (not Function Item)\n// Purpose: Normalize incoming JSON into per-program packages (lean)\n// - Exclude campaigns with state: archived, stopped, draft\n// - Messages assigned to exactly one parent (campaign -> newsletter -> transactional)\n// - Remove null/undefined fields, output_id, can_segment_on_variation from messages\n// - Only campaigns include program_state; newsletters/transactionals do not\n\nfunction parseIncoming(item) {\n  let raw = item?.json?.body ?? item?.json?.data ?? item?.json;\n\n  // File upload (binary) support\n  if (item?.binary && typeof item.binary === 'object') {\n    const uploadFile = item.binary['Upload_File'] || item.binary['Upload File'];\n    if (uploadFile?.data) {\n      const fileContent = Buffer.from(uploadFile.data, 'base64').toString('utf8');\n      return JSON.parse(fileContent);\n    }\n  }\n\n  if (typeof raw === 'string') return JSON.parse(raw);\n  if (raw && typeof raw === 'object') {\n    if (raw.body && typeof raw.body === 'string') return JSON.parse(raw.body);\n    return raw;\n  }\n  throw new Error('No usable input found.');\n}\n\n// Remove null/undefined; also drop output_id and can_segment_on_variation\nfunction cleanMessage(msg) {\n  const cleaned = {};\n  for (const [k, v] of Object.entries(msg)) {\n    if (\n      v !== null &&\n      v !== undefined &&\n      k !== 'output_id' &&\n      k !== 'can_segment_on_variation'\n    ) {\n      cleaned[k] = v;\n    }\n  }\n  return cleaned;\n}\n\nfunction buildPrograms(data) {\n  const programs = [];\n\n  const campaignMessagesMap = {};\n  const newsletterMessagesMap = {};\n  const transactionalMessagesMap = {};\n\n  // Assign each message to exactly one parent\n  (data.messages || []).forEach((msg) => {\n    const cleaned = cleanMessage(msg);\n    if (msg.campaign_id) {\n      (campaignMessagesMap[msg.campaign_id] ||= []).push(cleaned);\n    } else if (msg.newsletter_id) {\n      (newsletterMessagesMap[msg.newsletter_id] ||= []).push(cleaned);\n    } else if (msg.transactional_message_id) {\n      (transactionalMessagesMap[msg.transactional_message_id] ||= []).push(cleaned);\n    }\n  });\n\n  // Branch messages belong only to campaigns\n  (data.branch_messages || []).forEach((bmsg) => {\n    if (!bmsg.campaign_id) return;\n    const cleaned = cleanMessage(bmsg);\n    (campaignMessagesMap[bmsg.campaign_id] ||= []).push(cleaned);\n  });\n\n  // Campaigns (exclude archived, stopped, draft)\n  (data.campaigns || []).forEach((c) => {\n    const state = (c.state || '').toLowerCase();\n    if (['archived', 'stopped', 'draft'].includes(state)) return;\n\n    programs.push({\n      program_type: 'Campaign',\n      program_id: c.id,\n      program_name: c.name,\n      program_state: c.state ?? null,\n      messages: campaignMessagesMap[c.id] || [],\n    });\n  });\n\n  // Newsletters (no program_state key)\n  (data.newsletters || []).forEach((n) => {\n    programs.push({\n      program_type: 'Newsletter',\n      program_id: n.id,\n      program_name: n.name,\n      messages: newsletterMessagesMap[n.id] || [],\n    });\n  });\n\n  // Transactionals (no program_state key)\n  (data.transactional_messages || []).forEach((t) => {\n    programs.push({\n      program_type: 'Transactional',\n      program_id: t.id,\n      program_name: t.name,\n      messages: transactionalMessagesMap[t.id] || [],\n    });\n  });\n\n  return programs;\n}\n\n// Entrypoint\nreturn items.map((item) => {\n  const data = parseIncoming(item);\n  const programs = buildPrograms(data);\n  return { json: { programs } };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        -704
+      ],
+      "id": "8b45b595-ce14-4259-9982-ed23789e2285",
+      "name": "Process Raw Data"
+    },
+    {
+      "parameters": {
+        "content": "The API Key used here is from the **Gemini API** project.  \nSpeak to **Terance** if you need help with the credentials:\n\n- [Terry's Slack](https://customerio.enterprise.slack.com/team/U031ZD78C7K)  \n- [Google Cloud Console – Credentials](https://console.cloud.google.com/apis/credentials)\n",
+        "height": 192
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        896,
+        -1024
+      ],
+      "typeVersion": 1,
+      "id": "991cb5e8-ce5b-42f8-bcda-3125d940e4df",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "title": "={{ $('On form submission').item.json[\"Company Name\"] }} Lifecycle Atlas {{new Date($('On form submission').item.json.submittedAt).toISOString().split('T')[0]}}",
+        "sheetsUi": {
+          "sheetValues": [
+            {
+              "title": "Comprehensive"
+            },
+            {
+              "title": "Summary"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2272,
+        -800
+      ],
+      "id": "fb9a68b9-c797-4d89-a73d-8e00e085cae5",
+      "name": "Create spreadsheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8j9fBwMwuvP9H9go",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// Return each cleaned item as separate workflow item\nreturn cleaned.map(item => ({ json: item }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2944,
+        -704
+      ],
+      "id": "c166f5e7-7813-4d2e-8dea-cfff03eef871",
+      "name": "Comprehensive Program Analysis"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.spreadsheetId }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.sheets[0].properties.sheetId }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "program_name": "={{ $json.program_name }}",
+            "program_type": "={{ $json.program_type }}",
+            "program_id": "={{ $json.program_id }}",
+            "lifecycle_stage": "={{ $json.lifecycle_stage }}",
+            "cluster": "={{ $json.cluster }}",
+            "reasoning": "={{ $json.reasoning }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "program_name",
+              "displayName": "program_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "program_type",
+              "displayName": "program_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "program_id",
+              "displayName": "program_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "lifecycle_stage",
+              "displayName": "lifecycle_stage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cluster",
+              "displayName": "cluster",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "reasoning",
+              "displayName": "reasoning",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3168,
+        -704
+      ],
+      "id": "577bd3ba-498e-480a-9f05-6c317ba7a133",
+      "name": "Fill Comprehensive Sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8j9fBwMwuvP9H9go",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.spreadsheetId }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.sheets[1].properties.sheetId }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Clusters",
+              "displayName": "Clusters",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Onboarding",
+              "displayName": "Onboarding",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Retention",
+              "displayName": "Retention",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Reactivation and Win-back",
+              "displayName": "Reactivation and Win-back",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Activation and Conversion",
+              "displayName": "Activation and Conversion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Loyalty and Advocacy",
+              "displayName": "Loyalty and Advocacy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Engagement",
+              "displayName": "Engagement",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Consideration",
+              "displayName": "Consideration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Awareness",
+              "displayName": "Awareness",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2720,
+        -896
+      ],
+      "id": "2631cc26-c59e-4558-9b11-3950ba1cbf04",
+      "name": "Seed Summary Columns",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8j9fBwMwuvP9H9go",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.spreadsheetId }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.sheets[0].properties.sheetId }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2720,
+        -704
+      ],
+      "id": "f1c226d0-6fb0-4975-9fa6-6e495cdaaa66",
+      "name": "Seed Comprehensive Columns",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8j9fBwMwuvP9H9go",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n    \"Clusters\": \"\",\n    \"Onboarding\": \"\",\n    \"Retention\": \"\",\n    \"Reactivation and Win-back\": \"\",\n    \"Activation and Conversion\": \"\",\n    \"Loyalty and Advocacy\": \"\",\n    \"Engagement\": \"\",\n    \"Consideration\": \"\",\n    \"Awareness\": \"\",\n    \"Total\": \"\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2496,
+        -896
+      ],
+      "id": "dd850e3b-00eb-4a4a-8c5e-c16e72b3319e",
+      "name": "Summary Columns"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"program_name\": \"\",\n  \"program_type\": \"\",\n  \"program_id\": \"\",\n  \"lifecycle_stage\": \"\",\n  \"cluster\": \"\",\n  \"reasoning\": \"\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2496,
+        -704
+      ],
+      "id": "24324fcc-0325-4b21-81f8-0d316b1dda28",
+      "name": "Comprehensive Columns"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// 1) Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// 2) Build nested tree: Stage > Cluster > ProgramType\nconst tree = { _total: 0, stages: {} };\n\nfor (const p of cleaned) {\n  if (!p || p.error) continue;\n\n  const stage   = (p.lifecycle_stage || 'Other').trim();\n  const cluster = (p.cluster || 'Other').trim();\n  const type    = (p.program_type || 'Other').trim();\n\n  // Ensure stage exists\n  if (!tree.stages[stage]) {\n    tree.stages[stage] = { _total: 0, clusters: {} };\n  }\n\n  // Ensure cluster exists under stage\n  if (!tree.stages[stage].clusters[cluster]) {\n    tree.stages[stage].clusters[cluster] = { _total: 0, types: {} };\n  }\n\n  // Ensure type counter exists under cluster\n  if (!tree.stages[stage].clusters[cluster].types[type]) {\n    tree.stages[stage].clusters[cluster].types[type] = 0;\n  }\n\n  // Increment counts at all levels\n  tree._total += 1;\n  tree.stages[stage]._total += 1;\n  tree.stages[stage].clusters[cluster]._total += 1;\n  tree.stages[stage].clusters[cluster].types[type] += 1;\n}\n\n// 3) Create flat cluster rows with hardcoded stage columns\nconst createFlatClusterRows = (tree) => {\n  const clusters = new Set();\n  \n  // Collect all unique clusters\n  for (const [stageName, stageData] of Object.entries(tree.stages)) {\n    for (const [clusterName, clusterData] of Object.entries(stageData.clusters)) {\n      clusters.add(clusterName);\n    }\n  }\n  \n  // Create one row per cluster with hardcoded stage columns\n  return Array.from(clusters).sort().map(cluster => {\n    const row = {\n      cluster: cluster,\n      \"Onboarding\": 0,\n      \"Retention\": 0,\n      \"Reactivation and Win-back\": 0,\n      \"Activation and Conversion\": 0,\n      \"Loyalty and Advocacy\": 0,\n      \"Engagement\": 0,\n      \"Consideration\": 0,\n      \"Awareness\": 0,\n      \"Total\": \"=SUM(INDIRECT(\\\"B\\\"&ROW()&\\\":I\\\"&ROW()))\"\n    };\n    \n    // Fill in actual values\n    for (const [stageName, stageData] of Object.entries(tree.stages)) {\n      if (stageData.clusters[cluster]) {\n        row[stageName] = stageData.clusters[cluster]._total;\n      }\n    }\n    \n    return row;\n  });\n};\n\nconst flatRows = createFlatClusterRows(tree);\n\n// Create a totals row with dynamic column sum formulas (excluding current row)\nconst totalsRow = {\n  cluster: \"TOTAL\",\n  \"Onboarding\": \"=SUM(INDIRECT(\\\"B2:B\\\"&(ROW()-1)))\",\n  \"Retention\": \"=SUM(INDIRECT(\\\"C2:C\\\"&(ROW()-1)))\", \n  \"Reactivation and Win-back\": \"=SUM(INDIRECT(\\\"D2:D\\\"&(ROW()-1)))\",\n  \"Activation and Conversion\": \"=SUM(INDIRECT(\\\"E2:E\\\"&(ROW()-1)))\",\n  \"Loyalty and Advocacy\": \"=SUM(INDIRECT(\\\"F2:F\\\"&(ROW()-1)))\",\n  \"Engagement\": \"=SUM(INDIRECT(\\\"G2:G\\\"&(ROW()-1)))\",\n  \"Consideration\": \"=SUM(INDIRECT(\\\"H2:H\\\"&(ROW()-1)))\",\n  \"Awareness\": \"=SUM(INDIRECT(\\\"I2:I\\\"&(ROW()-1)))\",\n  \"Total\": \"=SUM(INDIRECT(\\\"J2:J\\\"&(ROW()-1)))\"\n};\n\n// Return each cluster row as separate workflow item, plus totals row\nreturn [\n  ...flatRows.map(row => ({ json: row })),\n  { json: totalsRow }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2944,
+        -896
+      ],
+      "id": "7245c6ea-1673-4e9f-a3f8-c74cef6ab691",
+      "name": "Summary Analysis"
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2-experimental/boards/{{ $('Create Board').item.json.id }}/mindmap_nodes",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"data\": {\n    \"nodeView\": {\n      \"data\": {\n        \"type\": \"text\",\n        \"content\": \"{{ $('On form submission').item.json[\"Company Name\"] }} Lifecycle Atlas ({{ $('Aggregate').item.json.content.length}})\"\n      }\n    }\n  }\n}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2496,
+        -512
+      ],
+      "id": "9acc7e8c-77d3-4371-b5f4-c9cee77d815f",
+      "name": "Central Node",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2-experimental/boards/{{ $('Create Board').first().json.id }}/mindmap_nodes",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2944,
+        -512
+      ],
+      "id": "44dc1a20-d94c-49ad-9ff9-71c126a3716e",
+      "name": "Stage Nodes",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2-experimental/boards/{{ $('Create Board').first().json.id }}/mindmap_nodes",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3392,
+        -512
+      ],
+      "id": "d7967425-0b90-4c76-8132-365ca7274f3b",
+      "name": "Cluster Nodes",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// 1) Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// 2) Build nested tree: Stage > Cluster > ProgramType\nconst tree = { _total: 0, stages: {} };\n\nfor (const p of cleaned) {\n  if (!p || p.error) continue;\n\n  const stage   = (p.lifecycle_stage || 'Other').trim();\n  const cluster = (p.cluster || 'Other').trim();\n  const type    = (p.program_type || 'Other').trim();\n\n  // Ensure stage exists\n  if (!tree.stages[stage]) {\n    tree.stages[stage] = { _total: 0, clusters: {} };\n  }\n\n  // Ensure cluster exists under stage\n  if (!tree.stages[stage].clusters[cluster]) {\n    tree.stages[stage].clusters[cluster] = { _total: 0, types: {} };\n  }\n\n  // Ensure type counter exists under cluster\n  if (!tree.stages[stage].clusters[cluster].types[type]) {\n    tree.stages[stage].clusters[cluster].types[type] = 0;\n  }\n\n  // Increment counts at all levels\n  tree._total += 1;\n  tree.stages[stage]._total += 1;\n  tree.stages[stage].clusters[cluster]._total += 1;\n  tree.stages[stage].clusters[cluster].types[type] += 1;\n}\n\n  // Simple mindmap nodes for Miro - stage names connected to central node (with counts)\n  const createMiroMindmapNodes = (tree, parentNodeId) => {\n    const mindmapNodes = [];\n    \n    // Create mindmap node for each stage, connected to the central node\n    for (const [stageName, stageData] of Object.entries(tree.stages)) {\n      mindmapNodes.push({\n        payload: {\n          data: {\n            nodeView: {\n              data: {\n                type: \"text\",\n                content: `${stageName} (${stageData._total})`\n              }\n            }\n          },\n          parent: {\n            id: parentNodeId\n          }\n        }\n      });\n    }\n    \n    return mindmapNodes;\n  };\n\n// Get the parent node ID from the input\nconst parentNodeId = $input.first().json.id;\n\nconst mindmapNodes = createMiroMindmapNodes(tree, parentNodeId);\n\n// Return Miro-ready mindmap node payloads\nreturn mindmapNodes.map(node => ({ json: node }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2720,
+        -512
+      ],
+      "id": "e9a9be19-a985-4254-8bb2-11b8026fcea0",
+      "name": "Stage Mapper"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// 1) Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// 2) Build nested tree: Stage > Cluster > ProgramType\nconst tree = { _total: 0, stages: {} };\n\nfor (const p of cleaned) {\n  if (!p || p.error) continue;\n\n  const stage   = (p.lifecycle_stage || 'Other').trim();\n  const cluster = (p.cluster || 'Other').trim();\n  const type    = (p.program_type || 'Other').trim();\n\n  // Ensure stage exists\n  if (!tree.stages[stage]) {\n    tree.stages[stage] = { _total: 0, clusters: {} };\n  }\n\n  // Ensure cluster exists under stage\n  if (!tree.stages[stage].clusters[cluster]) {\n    tree.stages[stage].clusters[cluster] = { _total: 0, types: {} };\n  }\n\n  // Ensure type counter exists under cluster\n  if (!tree.stages[stage].clusters[cluster].types[type]) {\n    tree.stages[stage].clusters[cluster].types[type] = 0;\n  }\n\n  // Increment counts at all levels\n  tree._total += 1;\n  tree.stages[stage]._total += 1;\n  tree.stages[stage].clusters[cluster]._total += 1;\n  tree.stages[stage].clusters[cluster].types[type] += 1;\n}\n\n// 3) Create cluster mindmap nodes for a specific stage only\nconst createClustersForStage = (tree, stageName, stageId) => {\n  const clusterNodes = [];\n  \n  // Find the stage data in the tree\n  const stageData = tree.stages[stageName];\n  \n  if (!stageData) {\n    console.warn(`Stage \"${stageName}\" not found in tree`);\n    console.warn(`Available stages:`, Object.keys(tree.stages));\n    return [];\n  }\n  \n  console.log(`Found ${Object.keys(stageData.clusters).length} clusters for stage \"${stageName}\"`);\n  \n  // Create mindmap node for each cluster under this stage\n  for (const [clusterName, clusterData] of Object.entries(stageData.clusters)) {\n    clusterNodes.push({\n      payload: {\n        data: {\n          nodeView: {\n            data: {\n              type: \"text\",\n              content: `${clusterName} (${stageData.clusters[clusterName]._total})`\n            }\n          }\n        },\n        parent: {\n          id: stageId\n        }\n      }\n    });\n  }\n  \n  return clusterNodes;\n};\n\n// 4) Process ALL incoming stage nodes and create clusters for each\nconst outputs = [];\nfor (const item of items) {\n  const stageNode = item.json;\n\n  // Extract stage name from the content (remove HTML + trailing counts like \" (86)\")\n  const stageContent = stageNode.data?.nodeView?.data?.content || '';\n  const stageName = stageContent\n    .replace(/<[^>]*>/g, '')     // strip HTML\n    .replace(/\\s*\\(\\d+\\)\\s*$/, '') // strip trailing count\n    .trim();\n  const stageId = stageNode.id;\n\n  // Debug logging per stage\n  console.log(`Processing stage: \"${stageName}\" (ID: ${stageId})`);\n  console.log(`Available stages in tree:`, Object.keys(tree.stages));\n\n  const clusterNodes = createClustersForStage(tree, stageName, stageId);\n\n  console.log(`Generated ${clusterNodes.length} clusters for stage \"${stageName}\"`);\n  if (clusterNodes.length > 0) {\n    console.log(`Cluster names:`, clusterNodes.map(n => n.payload.data.nodeView.data.content));\n  }\n\n  for (const node of clusterNodes) {\n    outputs.push({ json: node });\n  }\n}\n\n// Return Miro-ready cluster mindmap node payloads for ALL stages\nreturn outputs;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3168,
+        -512
+      ],
+      "id": "4031f326-b72c-4543-8745-b635c7094d8d",
+      "name": "Cluster Mapper"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// 1) Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// 2) Build nested tree: Stage > Cluster > ProgramType\nconst tree = { _total: 0, stages: {} };\n\nfor (const p of cleaned) {\n  if (!p || p.error) continue;\n\n  const stage   = (p.lifecycle_stage || 'Other').trim();\n  const cluster = (p.cluster || 'Other').trim();\n  const type    = (p.program_type || 'Other').trim();\n\n  if (!tree.stages[stage]) {\n    tree.stages[stage] = { _total: 0, clusters: {} };\n  }\n  if (!tree.stages[stage].clusters[cluster]) {\n    tree.stages[stage].clusters[cluster] = { _total: 0, types: {} };\n  }\n  if (!tree.stages[stage].clusters[cluster].types[type]) {\n    tree.stages[stage].clusters[cluster].types[type] = 0;\n  }\n\n  tree._total += 1;\n  tree.stages[stage]._total += 1;\n  tree.stages[stage].clusters[cluster]._total += 1;\n  tree.stages[stage].clusters[cluster].types[type] += 1;\n}\n\n// Helpers\nconst stripHtml = (s) => (s || '').replace(/<[^>]*>/g, '');\nconst stripTrailingCount = (s) => s.replace(/\\s*\\(\\d+\\)\\s*$/, '').trim();\n\nconst findClusterContext = (tree, clusterName, expectedTotal) => {\n  const matches = [];\n  for (const [stageName, stageData] of Object.entries(tree.stages)) {\n    const c = stageData.clusters[clusterName];\n    if (!c) continue;\n    if (typeof expectedTotal === 'number' && c._total !== expectedTotal) continue;\n    matches.push({ stageName, clusterData: c });\n  }\n  if (matches.length === 1) return matches[0];\n  if (matches.length > 1) {\n    console.warn(`Cluster name \"${clusterName}\" matched multiple stages; using the first deterministic match.`);\n    return matches[0];\n  }\n  return null;\n};\n\n// 3) For each incoming cluster node, create Newsletter/Campaigns/Transactional child nodes with counts\nconst outputs = [];\nfor (const item of items) {\n  const clusterNode = item.json;\n\n  const rawLabel = stripHtml(clusterNode.data?.nodeView?.data?.content || '');\n  const labelCountMatch = rawLabel.match(/\\((\\d+)\\)\\s*$/);\n  const expectedTotal = labelCountMatch ? parseInt(labelCountMatch[1], 10) : undefined;\n  const clusterName = stripTrailingCount(rawLabel);\n  const clusterId = clusterNode.id;\n\n  console.log(`Types: processing cluster \"${clusterName}\" (expected total: ${expectedTotal ?? 'n/a'})`);\n\n  const context = findClusterContext(tree, clusterName, expectedTotal);\n  if (!context) {\n    console.warn(`Types: cluster \"${clusterName}\" not found in tree.`);\n    continue;\n  }\n\n  const types = context.clusterData.types || {};\n  const typeMappings = [\n    { key: 'Newsletter', label: 'Newsletter' },\n    { key: 'Campaign', label: 'Campaigns' },\n    { key: 'Transactional', label: 'Transactional' },\n  ];\n\n  for (const { key, label } of typeMappings) {\n    const count = types[key] || 0;\n    if (!count) continue;\n\n    outputs.push({\n      json: {\n        payload: {\n          data: {\n            nodeView: {\n              data: {\n                type: 'text',\n                content: `${label} (${count})`\n              }\n            }\n          },\n          parent: {\n            id: clusterId\n          }\n        }\n      }\n    });\n  }\n}\n\nreturn outputs;\n\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3616,
+        -512
+      ],
+      "id": "14478352-3b85-4bea-8b3a-0fd1adec279b",
+      "name": "Type Mapper"
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2-experimental/boards/{{ $('Create Board').first().json.id }}/mindmap_nodes",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3840,
+        -512
+      ],
+      "id": "a4201ecf-60a5-4d3f-9a3c-48eae5342fa0",
+      "name": "Types Nodes",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const cleaned = [];\n\n// 1) Extract JSON from all content[*].parts[*].text\nconst content = $('Aggregate').first().json.content;\nif (content) {\n  for (const c of content) {\n    if (c.parts) {\n      for (const p of c.parts) {\n        if (p.text) {\n          const match = p.text.match(/{[\\s\\S]*}/);\n          if (match) {\n            try {\n              cleaned.push(JSON.parse(match[0]));\n            } catch (e) {\n              cleaned.push({ error: 'Invalid JSON', raw: match[0] });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// 2) Build nested tree: Stage > Cluster > ProgramType, and keep one example name\nconst tree = { _total: 0, stages: {} };\n\nfor (const p of cleaned) {\n  if (!p || p.error) continue;\n\n  const stage   = (p.lifecycle_stage || 'Other').trim();\n  const cluster = (p.cluster || 'Other').trim();\n  const type    = (p.program_type || 'Other').trim();\n  const program = (p.program_name || '').trim();\n\n  if (!tree.stages[stage]) {\n    tree.stages[stage] = { _total: 0, clusters: {} };\n  }\n  if (!tree.stages[stage].clusters[cluster]) {\n    tree.stages[stage].clusters[cluster] = { _total: 0, types: {}, examples: {} };\n  }\n  if (!tree.stages[stage].clusters[cluster].types[type]) {\n    tree.stages[stage].clusters[cluster].types[type] = 0;\n  }\n\n  tree._total += 1;\n  tree.stages[stage]._total += 1;\n  tree.stages[stage].clusters[cluster]._total += 1;\n  tree.stages[stage].clusters[cluster].types[type] += 1;\n\n  // Store the example program name with the largest ID for this type\n  if (program) {\n    const currentExample = tree.stages[stage].clusters[cluster].examples[type];\n    const currentId = p.id || 0;\n    \n    if (!currentExample || currentId > currentExample.id) {\n      tree.stages[stage].clusters[cluster].examples[type] = {\n        name: program,\n        id: currentId\n      };\n    }\n  }\n}\n\n// Helpers\nconst stripHtml = (s) => (s || '').replace(/<[^>]*>/g, '');\nconst stripTrailingCount = (s) => s.replace(/\\s*\\(\\d+\\)\\s*$/, '').trim();\nconst normalizeTypeLabel = (label) => {\n  const base = stripTrailingCount(label).trim();\n  if (/^campaigns?$/i.test(base)) return 'Campaign';\n  if (/^newsletter$/i.test(base)) return 'Newsletter';\n  if (/^transactionals?$/i.test(base)) return 'Transactional';\n  return base; // fallback\n};\n\n// Try to find the single cluster context for a given type/count\nconst findContextForType = (tree, typeKey, expectedCount) => {\n  const candidates = [];\n  for (const [stageName, stageData] of Object.entries(tree.stages)) {\n    for (const [clusterName, clusterData] of Object.entries(stageData.clusters)) {\n      const count = clusterData.types[typeKey] || 0;\n      if (!count) continue;\n      if (typeof expectedCount === 'number' && expectedCount >= 0) {\n        if (count === expectedCount) candidates.push({ stageName, clusterName, clusterData });\n      } else {\n        candidates.push({ stageName, clusterName, clusterData });\n      }\n    }\n  }\n  if (candidates.length === 1) return candidates[0];\n  if (candidates.length > 1) {\n    console.warn(`Example: multiple clusters match type ${typeKey} (expected=${expectedCount ?? 'n/a'}). Using first match.`);\n    return candidates[0];\n  }\n  return null;\n};\n\n// 3) For each incoming TYPE node, create one child node with an example program name\nconst outputs = [];\nfor (const item of items) {\n  const typeNode = item.json;\n\n  const rawLabel = stripHtml(typeNode.data?.nodeView?.data?.content || '');\n  const labelCountMatch = rawLabel.match(/\\((\\d+)\\)\\s*$/);\n  const expectedCount = labelCountMatch ? parseInt(labelCountMatch[1], 10) : undefined;\n  const typeKey = normalizeTypeLabel(rawLabel);\n  const typeId = typeNode.id;\n\n  console.log(`Example: processing type \"${typeKey}\" (expected count: ${expectedCount ?? 'n/a'})`);\n\n  const context = findContextForType(tree, typeKey, expectedCount);\n  if (!context) {\n    console.warn(`Example: no matching context found for type ${typeKey}.`);\n    continue;\n  }\n\n  const exampleData = context.clusterData.examples?.[typeKey];\n  const exampleName = exampleData?.name;\n  const actualCount = context.clusterData.types?.[typeKey] || 0;\n  if (!exampleName || actualCount === 0) {\n    console.warn(`Example: no example available or zero count for type ${typeKey}.`);\n    continue;\n  }\n\n  outputs.push({\n    json: {\n      payload: {\n        data: {\n          nodeView: {\n            data: {\n              type: 'text',\n              content: exampleName\n            }\n          }\n        },\n        parent: {\n          id: typeId\n        }\n      }\n    }\n  });\n}\n\nreturn outputs;\n\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4064,
+        -512
+      ],
+      "id": "66ed2664-d55e-4fdc-ba75-69bebd5ad699",
+      "name": "Examples Mapper"
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2-experimental/boards/{{ $('Create Board').first().json.id }}/mindmap_nodes",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4288,
+        -512
+      ],
+      "id": "e993ddaa-2733-40ac-96cb-430f602cf3b2",
+      "name": "Examples Nodes",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "https://api.miro.com/v2/boards",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('On form submission').item.json[\"Company Name\"] }} Lifecycle Atlas {{new Date($('On form submission').item.json.submittedAt).toISOString().split('T')[0]}}"
+            }
+          ]
+        },
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2272,
+        -512
+      ],
+      "id": "637a0769-d42e-463f-925e-7e26e5195f34",
+      "name": "Create Board",
+      "extendsCredential": "miroOAuth2Api",
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.spreadsheetId }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "writer",
+            "type": "user",
+            "emailAddress": "={{ $('On form submission').first().json[' Email'] }}"
+          }
+        },
+        "options": {
+          "emailMessage": "=🎉 Your Lifecycle Atlas Analysis is Ready!\n\nAnalysis completed for {{ $('On form submission').first().json['Company Name'] }}\n\nGreat news! Your Lifecycle Atlas analysis has been completed successfully. We've analyzed your marketing programs and created comprehensive visualizations to help you understand your customer lifecycle strategy.\n\n📊 Google Sheets Analysis Ready\nYour comprehensive data breakdown with program categorizations, lifecycle stage mappings, and cluster analysis is now available.\n\nLink: https://docs.google.com/spreadsheets/d/{{ $('Create spreadsheet').item.json.spreadsheetId }}\n\n🗺️ Miro Visual Atlas\nYour interactive mind map showing lifecycle stages, clusters, and program types will be shared separately via Miro.\n\n📈 What's Next?\n\nUse these resources to:\n• Identify gaps in your lifecycle coverage\n• Optimize messaging for each stage and cluster\n• Plan new campaigns to fill identified gaps\n• Align your team around a unified lifecycle strategy\n\nQuestions? Drop a message in the #csm-ai-champions Slack channel.\n\nThis analysis was generated on {{ new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3392,
+        -896
+      ],
+      "id": "60493d3b-5e22-4164-8b80-b193aebc0d57",
+      "name": "Share file",
+      "executeOnce": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "g2WgtuJuxY0paGxX",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.spreadsheetId }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Create spreadsheet').item.json.sheets[1].properties.sheetId }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Clusters": "={{ $json.cluster }}",
+            "Onboarding": "={{ $json.Onboarding }}",
+            "Retention": "={{ $json.Retention }}",
+            "Reactivation and Win-back": "={{ $json['Reactivation and Win-back'] }}",
+            "Activation and Conversion": "={{ $json['Activation and Conversion'] }}",
+            "Loyalty and Advocacy": "={{ $json['Loyalty and Advocacy'] }}",
+            "Engagement": "={{ $json.Engagement }}",
+            "Consideration": "={{ $json.Consideration }}",
+            "Awareness": "={{ $json.Awareness }}",
+            "Total": "={{ $json.Total }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Clusters",
+              "displayName": "Clusters",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Onboarding",
+              "displayName": "Onboarding",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Retention",
+              "displayName": "Retention",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reactivation and Win-back",
+              "displayName": "Reactivation and Win-back",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Activation and Conversion",
+              "displayName": "Activation and Conversion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Loyalty and Advocacy",
+              "displayName": "Loyalty and Advocacy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Engagement",
+              "displayName": "Engagement",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Consideration",
+              "displayName": "Consideration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Awareness",
+              "displayName": "Awareness",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3168,
+        -896
+      ],
+      "id": "3316171d-eaec-4272-a675-0251b04dc3b6",
+      "name": "Fill Summary Sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8j9fBwMwuvP9H9go",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "httpVariantWarning": "",
+        "curlImport": "",
+        "method": "POST",
+        "": "",
+        "url": "=https://api.miro.com/v2/boards/{{ $('Create Board').first().json.id }}/members",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "miroOAuth2Api",
+        "provideSslCertificates": false,
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"emails\": [\n    \"{{ $('On form submission').first().json[' Email'] }}\"\n  ],\n  \"role\": \"editor\",\n  \"message\": \"Your Lifecycle Atlas Visual Map is Ready! Analysis completed for {{ $('On form submission').first().json['Company Name'] }}. Your Google Sheets analysis was shared separately via Google Drive. If you still see 'comment only' access, please request a Miro license from IT.\"\n}",
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4512,
+        -512
+      ],
+      "id": "0457d82b-7d3c-4643-9520-81d70d012548",
+      "name": "Share Board",
+      "extendsCredential": "miroOAuth2Api",
+      "executeOnce": true,
+      "credentials": {
+        "miroOAuth2Api": {
+          "id": "v6CGqZjtJz7kkvaO",
+          "name": "Miro account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final": {
+      "main": [
+        [
+          {
+            "node": "Process Raw Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Stages and Clusters": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Create spreadsheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Board",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Raw Data": {
+      "main": [
+        [
+          {
+            "node": "Generate Stages and Clusters",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create spreadsheet": {
+      "main": [
+        [
+          {
+            "node": "Comprehensive Columns",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Summary Columns",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comprehensive Program Analysis": {
+      "main": [
+        [
+          {
+            "node": "Fill Comprehensive Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Seed Comprehensive Columns": {
+      "main": [
+        [
+          {
+            "node": "Comprehensive Program Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Seed Summary Columns": {
+      "main": [
+        [
+          {
+            "node": "Summary Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summary Columns": {
+      "main": [
+        [
+          {
+            "node": "Seed Summary Columns",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comprehensive Columns": {
+      "main": [
+        [
+          {
+            "node": "Seed Comprehensive Columns",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summary Analysis": {
+      "main": [
+        [
+          {
+            "node": "Fill Summary Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Central Node": {
+      "main": [
+        [
+          {
+            "node": "Stage Mapper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stage Nodes": {
+      "main": [
+        [
+          {
+            "node": "Cluster Mapper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stage Mapper": {
+      "main": [
+        [
+          {
+            "node": "Stage Nodes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cluster Mapper": {
+      "main": [
+        [
+          {
+            "node": "Cluster Nodes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cluster Nodes": {
+      "main": [
+        [
+          {
+            "node": "Type Mapper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Type Mapper": {
+      "main": [
+        [
+          {
+            "node": "Types Nodes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Types Nodes": {
+      "main": [
+        [
+          {
+            "node": "Examples Mapper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Examples Mapper": {
+      "main": [
+        [
+          {
+            "node": "Examples Nodes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Board": {
+      "main": [
+        [
+          {
+            "node": "Central Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Examples Nodes": {
+      "main": [
+        [
+          {
+            "node": "Share Board",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fill Comprehensive Sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Fill Summary Sheet": {
+      "main": [
+        [
+          {
+            "node": "Share file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8f227e09-017d-4870-8566-fa4f7f7fe5de",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ab55879a4af2c5184e1eb4f178f9dbb71a36d48da7cca15b89e736d33becfef5"
+  },
+  "id": "5vESPDT6mxPjWXsK",
+  "tags": [
+    {
+      "createdAt": "2025-08-12T08:44:41.248Z",
+      "updatedAt": "2025-08-12T08:44:41.248Z",
+      "id": "ZpRbjB9aFVNN5vua",
+      "name": "Pranav"
+    }
+  ]
+}
