@@ -6,6 +6,14 @@ An AI-powered automation tool that analyzes Customer.io workspace data to automa
 
 The Lifecycle Atlas transforms hours of manual campaign analysis into minutes of automated insights, helping Customer Success Managers (CSMs) understand customer journey coverage and identify optimization opportunities.
 
+### n8n Workflow
+![n8n Workflow](n8n.png)
+*The automated workflow that processes Customer.io data and generates insights*
+
+### Miro Board Output
+![Miro Board](Miro.png)
+*Example of the generated customer journey mindmap in Miro*
+
 ## 🚀 Quick Start
 
 1. **Access Requirements:**
